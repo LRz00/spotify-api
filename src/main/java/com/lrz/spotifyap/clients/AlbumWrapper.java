@@ -4,7 +4,9 @@
  */
 package com.lrz.spotifyap.clients;
 
-import feign.form.FormProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import java.util.List;
 import lombok.*;
 /**
  *
@@ -14,14 +16,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginRequest {
-    @FormProperty("grant_type")
-    private String grantType;
-    @FormProperty("client_id")
-    private String clientId;
-    @FormProperty("client_secret")
-    private String clientSecret;
-
-  
- 
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
+public class AlbumWrapper {
+    private List<Album> items;
 }

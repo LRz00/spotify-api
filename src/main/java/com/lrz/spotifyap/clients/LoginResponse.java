@@ -5,29 +5,19 @@
 package com.lrz.spotifyap.clients;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import lombok.*;
 /**
  *
  * @author lara
  */
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class LoginResponse {
     
     @JsonProperty("access_token")
     private String acessToken;
 
-    public LoginResponse(String acessToken) {
-        this.acessToken = acessToken;
-    }
-
-    public LoginResponse() {
-    }
-
-    public String getAcessToken() {
-        return acessToken;
-    }
-
-    public void setAcessToken(String acessToken) {
-        this.acessToken = acessToken;
-    }
     
 }

@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.lrz.spotifyap.clients;
-
-import feign.form.FormProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.*;
 /**
  *
@@ -12,16 +12,10 @@ import lombok.*;
  */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class LoginRequest {
-    @FormProperty("grant_type")
-    private String grantType;
-    @FormProperty("client_id")
-    private String clientId;
-    @FormProperty("client_secret")
-    private String clientSecret;
+@AllArgsConstructor
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
+public class AlbumResponse {
 
-  
- 
+private AlbumWrapper albums;    
 }
