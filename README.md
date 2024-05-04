@@ -1,4 +1,4 @@
-**/spotify/api/albums response:**
+**/spotify/api/newAlbums response:**
 <img src="readme-images/new-releases.png">
 
 **/spotify/api/twice response:**
