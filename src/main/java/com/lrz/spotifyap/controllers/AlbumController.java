@@ -33,10 +33,10 @@ public class AlbumController {
     }
     
     
-    @GetMapping("/albums")
+    @GetMapping("/newAlbums")
     public ResponseEntity<List<Album>> listReleases(){
         
-          var request = new LoginRequest("client_credentials", "client_id", 
+            var request = new LoginRequest("client_credentials", "client_id", 
                 "client_secret");
           
           var token = authSpotifyClient.login(request).getAcessToken();
@@ -45,5 +45,18 @@ public class AlbumController {
           
         return ResponseEntity.ok(response.getAlbums().getItems());
     }
-            
+    
+    @GetMapping("/twice")
+    public ResponseEntity<List<Album>> twiceAlbums(){
+        
+            var request = new LoginRequest("client_credentials", "client_id", 
+                "client_secret");
+          
+          var token = authSpotifyClient.login(request).getAcessToken();
+          
+          var response = albumSpotifyClient.getTwiceAlbums("Bearer " + token);
+          
+        return ResponseEntity.ok(response.getItems());
+    }
+       
 }
